@@ -48,3 +48,14 @@ function greaterThanAvg(nums: number[]): number[] {
 	return nums.filter((n) => n > avg);
 }
 console.log(greaterThanAvg([1, 3, 5, 7]));
+
+//Combine it: filter words that include "e".
+function getWordsContaining(
+	words: string[],
+	contains: string
+): string[] | undefined {
+	return words.filter((w) => w.includes(contains));
+}
+console.log(getWordsContaining(["apple", "banana"], "a"));
+console.log(getWordsContaining(["apple", "banana"], "w"));
+console.log(getWordsContaining(["anpple", "banana"], "an"));

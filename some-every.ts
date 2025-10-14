@@ -20,4 +20,5 @@ console.log(anyContain(["hi", "bye", "yes"], "y"));
 console.log(anyContain(["hi", "bye", "yes"], "w"));
 console.log(anyContain(["hi", "bye", "yes"], "ye"));
 
-// Check if all strings in an array are lowercase.
+
+
