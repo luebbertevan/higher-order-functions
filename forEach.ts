@@ -1,9 +1,10 @@
+//.forEach is useful for oneliner clarity like for console.log and single function calls with no breaks or returns
+
 // Log every number in [10, 20, 30].
 function logAll(nums: number[]) {
 	nums.forEach((w) => console.log(w));
 }
 logAll([10, 20, 30]);
-
 
 // Write a function countAboveAverage(nums: number[]): number that counts how many numbers are greater than the average.
 function countAboveAverage(nums: number[]): number {
