@@ -1,33 +1,33 @@
 const user = { name: "Evan", age: 25 };
 
-type Person = {
-  name: string;
-  age: number;
-  alive: boolean;
+type Lad = {
+	name: string;
+	age: number;
+	alive: boolean;
 };
-type User = typeof user;
+type Userboy = typeof user;
 
-type Keys = keyof User;
+type Keys = keyof Userboy;
 
 type Copy<T> = {
-  [K in keyof T]: T[K];
+	[K in keyof T]: T[K];
 };
 
 type ReadonlyCopy<T> = {
-  readonly [K in keyof T]: T[K];
+	readonly [K in keyof T]: T[K];
 };
 
 type PartialCopy<T> = {
-  [K in keyof T]?: T[K];
+	[K in keyof T]?: T[K];
 };
 
-type CopiedPerson = Copy<Person>;
-type Test = ReadonlyCopy<Person>;
-type Optional = PartialCopy<Person>;
+type CopiedPerson = Copy<Lad>;
+type Test = ReadonlyCopy<Lad>;
+type Optional = PartialCopy<Lad>;
 
 //extends As a constraint for generics
 function getProp<T, K extends keyof T>(obj: T, key: K) {
-  return obj[key];
+	return obj[key];
 }
 // K extends keyof T says:
 // “K can only be a key of T.”
@@ -36,7 +36,7 @@ function getProp<T, K extends keyof T>(obj: T, key: K) {
 //extends As a conditional type:
 type IsString<T> = T extends string ? true : false;
 type A = IsString<"hi">; // true
-type B = IsString<42>;   // false
+type B = IsString<42>; // false
 
 //literal values can also be types.
 type X = 42;
@@ -45,18 +45,12 @@ type X = 42;
 
 //infer R captures whatever the function returns.
 //(...args: any[]) → Represents a function type with any number of arguments of any type.
-type ReturnTypeOf<T> = T extends (...args: any[]) => infer R ? R : never;
+type ReturnTyper<T> = T extends (...args: any[]) => infer R ? R : never;
 
-type Foo = () => number;
-type Result = ReturnTypeOf<Foo>; // number
-
+type Food = () => number;
+type Result = ReturnTyper<Food>; // number
 
 type FirstArg<T> = T extends (arg1: infer P, ...args: any[]) => any ? P : never;
 
 type F = (x: string, y: number) => void;
 type Arg0 = FirstArg<F>; // string
-
-
-
-
-
