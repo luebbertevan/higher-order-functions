@@ -71,6 +71,7 @@ const stats: StationStats = {
 function makeUser() {
   return { id: 1, name: "Evan" };
 }
+
 type MakeUserReturn = ReturnType<typeof makeUser>; // { id: number; name: string; }
 
 // 8️⃣  Parameters<T> — extract the parameter types of a function
