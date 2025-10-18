@@ -37,6 +37,7 @@ function slowAdd(a: number, b: number) {
 	return a + b;
 }
 
+// Make a new function out of slowAdd for logging
 const debugAdd = withDebug(slowAdd);
 
 setDebug(true);
